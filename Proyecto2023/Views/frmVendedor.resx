@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="211817_search_strong_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\211817_search_strong_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="285638_pencil_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\285638_pencil_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="285641_id_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\285641_id_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="285657_floppy_guardar_save_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\285657_floppy_guardar_save_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="285688_file_empty_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\285688_file_empty_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="299045_sign_error_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\299045_sign_error_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
 </root>

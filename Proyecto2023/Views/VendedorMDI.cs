@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto2023
 {
-    public partial class MDIParent1 : Form
+    public partial class VendedorMDI : Form
     {
         private int childFormNumber = 0;
 
-        public MDIParent1()
+        public VendedorMDI()
         {
             InitializeComponent();
         }
@@ -68,12 +68,12 @@ namespace Proyecto2023
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+            //toolStrip.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
