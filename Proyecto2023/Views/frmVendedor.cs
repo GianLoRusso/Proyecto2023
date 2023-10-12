@@ -38,11 +38,11 @@ namespace Proyecto2023.Views
         {
             Vendedor oVendedor = new Vendedor();
 
-            int ID = 0;
+            int codigoEmpleado = 1;
 
-            int.TryParse(txtID.Text, out ID);
+            int.TryParse(txtID.Text, out codigoEmpleado);
 
-            oVendedor.ID = ID;
+            oVendedor.ID = codigoEmpleado;
 
             oVendedor.Nombre = txtNombre.Text;
 
