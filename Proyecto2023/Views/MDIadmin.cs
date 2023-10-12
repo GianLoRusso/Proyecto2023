@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto2023.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Proyecto2023
 {
-    public partial class MDIParent2 : Form
+    public partial class MDIadmin : Form
     {
         private int childFormNumber = 0;
 
-        public MDIParent2()
+        public MDIadmin()
         {
             InitializeComponent();
         }
@@ -102,6 +103,12 @@ namespace Proyecto2023
             {
                 childForm.Close();
             }
+        }
+
+        private void altaVendedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVendedor formularioVendedor = new frmVendedor();
+            formularioVendedor.Show();
         }
     }
 }

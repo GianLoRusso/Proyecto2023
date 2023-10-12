@@ -55,6 +55,7 @@
             // 
             this.txtID.Location = new System.Drawing.Point(466, 45);
             this.txtID.Name = "txtID";
+            this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(54, 20);
             this.txtID.TabIndex = 1;
             // 
@@ -88,6 +89,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Enabled = false;
             this.btnModificar.Image = global::Proyecto2023.Properties.Resources._285638_pencil_icon;
             this.btnModificar.Location = new System.Drawing.Point(12, 89);
             this.btnModificar.Name = "btnModificar";
@@ -120,9 +122,12 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvVendedores
             // 
+            this.dgvVendedores.AllowUserToAddRows = false;
+            this.dgvVendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVendedores.Location = new System.Drawing.Point(13, 259);
             this.dgvVendedores.Name = "dgvVendedores";

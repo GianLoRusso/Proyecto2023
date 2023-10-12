@@ -21,28 +21,30 @@ namespace DAL
 
         public bool Agregar(Vendedor oVendedor)
         {
-            SqlCommand SQLComando = new SqlCommand("INSERT INTO Vendedor VALUES (@VendorName)");
+            SqlCommand SQLComando = new SqlCommand("INSERT INTO Vendedor VALUES (@Nombre)");
 
-            SQLComando.Parameters.Add("@VendorName", SqlDbType.VarChar).Value= oVendedor.Nombre;
+            SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value= oVendedor.Nombre;
 
             return conexion.ejecutarComandoSinRetornoDatos(SQLComando);
 
             //return conexion.ejecutarComandoSinRetornoDatos("INSERT INTO Vendedor(Nombre, Contraseña)VALUES('"+oVendedor.Nombre+ oVendedor.Contraseña+"')");
 
         }
-        public int Eliminar(Vendedor oVendedor)
+        public bool Eliminar(Vendedor oVendedor)
         {
-            conexion.ejecutarComandoSinRetornoDatos("DELETE FROM Vendedor WHERE ID="+ oVendedor.ID);
+            SqlCommand SQLComando = new SqlCommand("DELETE FROM Vendedor WHERE ID=@ID ");
 
-            return 1;
+            SQLComando.Parameters.Add("@ID", SqlDbType.Int).Value = oVendedor.ID;
+
+            return conexion.ejecutarComandoSinRetornoDatos(SQLComando);
         }
-        public int Modificar(Vendedor oVendedor)
+        public bool Modificar(Vendedor oVendedor)
         {
-            conexion.ejecutarComandoSinRetornoDatos("UPDATE Vendedor "+ 
-                "SET Nombre='"+oVendedor.Nombre +"'"+
-                "WHERE ID=" + oVendedor.ID);
+            SqlCommand SQLComando = new SqlCommand("UPDATE Vendedor SET Nombre=@Nombre WHERE ID=@ID");
+            SQLComando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = oVendedor.Nombre;
+            SQLComando.Parameters.Add("@ID",SqlDbType.Int).Value = oVendedor.ID;
 
-            return 1;
+            return conexion.ejecutarComandoSinRetornoDatos(SQLComando);
         }
         public DataSet MostrarVendedores()
         {

@@ -22,6 +22,7 @@ namespace Proyecto2023.Views
             oVendedorDAL = new VendedorDAL();
             InitializeComponent();
             LLenarGrid();
+            LimpiarEntradas();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,6 +32,7 @@ namespace Proyecto2023.Views
 
             oVendedorDAL.Agregar(RecuperarInformacion());
             LLenarGrid();
+            LimpiarEntradas();
         }
         private Vendedor RecuperarInformacion()
         {
@@ -53,10 +55,21 @@ namespace Proyecto2023.Views
         {
             int indice = e.RowIndex;
 
-            txtID.Text= dgvVendedores.Rows[indice].Cells[0].Value.ToString();
-            txtContraseña.Text = dgvVendedores.Rows[indice].Cells[1].Value.ToString();
-            txtNombre.Text = dgvVendedores.Rows[indice].Cells[2].Value.ToString();
-        
+            dgvVendedores.ClearSelection();
+
+            if (indice >= 0)
+            {
+                txtID.Text = dgvVendedores.Rows[indice].Cells[0].Value.ToString();
+                txtContraseña.Text = dgvVendedores.Rows[indice].Cells[1].Value.ToString();
+                txtNombre.Text = dgvVendedores.Rows[indice].Cells[2].Value.ToString();
+
+                btnAgregar.Enabled = false;
+                btnBorrar.Enabled = true;
+                btnModificar.Enabled = true;
+                btnCancelar.Enabled = true;
+            }
+            
+
         }
 
 
@@ -64,16 +77,34 @@ namespace Proyecto2023.Views
         {
             oVendedorDAL.Eliminar(RecuperarInformacion());
             LLenarGrid();
+            LimpiarEntradas();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             oVendedorDAL.Modificar(RecuperarInformacion());
             LLenarGrid();
+            LimpiarEntradas();
         }
         public void LLenarGrid()
         {
             dgvVendedores.DataSource = oVendedorDAL.MostrarVendedores().Tables[0];
+        }
+        public void LimpiarEntradas()
+        {
+            txtID.Text = "";
+            txtNombre.Text = "";
+            txtContraseña.Text = "";
+
+            btnAgregar.Enabled = true;
+            btnBorrar.Enabled = false;
+            btnModificar.Enabled = false;
+            btnCancelar.Enabled = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarEntradas();
         }
     }
 }

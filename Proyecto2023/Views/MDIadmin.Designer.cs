@@ -1,6 +1,6 @@
 ﻿namespace Proyecto2023
 {
-    partial class MDIParent2
+    partial class MDIadmin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIadmin));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,6 +79,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.altaVendedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -92,7 +93,8 @@
             this.viewMenu,
             this.toolsMenu,
             this.windowsMenu,
-            this.helpMenu});
+            this.helpMenu,
+            this.altaVendedorToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.MdiWindowListItem = this.windowsMenu;
             this.menuStrip.Name = "menuStrip";
@@ -493,7 +495,14 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // MDIParent2
+            // altaVendedorToolStripMenuItem
+            // 
+            this.altaVendedorToolStripMenuItem.Name = "altaVendedorToolStripMenuItem";
+            this.altaVendedorToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.altaVendedorToolStripMenuItem.Text = "Alta Vendedor";
+            this.altaVendedorToolStripMenuItem.Click += new System.EventHandler(this.altaVendedorToolStripMenuItem_Click);
+            // 
+            // MDIadmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -503,8 +512,8 @@
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "MDIParent2";
-            this.Text = "MDIParent2";
+            this.Name = "MDIadmin";
+            this.Text = "Admin";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.toolStrip.ResumeLayout(false);
@@ -567,6 +576,7 @@
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.ToolStripMenuItem altaVendedorToolStripMenuItem;
     }
 }
 

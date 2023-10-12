@@ -64,11 +64,11 @@
     <Compile Include="Views\VendedorMDI.Designer.cs">
       <DependentUpon>VendedorMDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MDIParent2.cs">
+    <Compile Include="Views\MDIadmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MDIParent2.Designer.cs">
-      <DependentUpon>MDIParent2.cs</DependentUpon>
+    <Compile Include="Views\MDIadmin.Designer.cs">
+      <DependentUpon>MDIadmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="Views\VendedorMDI.resx">
       <DependentUpon>VendedorMDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\MDIParent2.resx">
-      <DependentUpon>MDIParent2.cs</DependentUpon>
+    <EmbeddedResource Include="Views\MDIadmin.resx">
+      <DependentUpon>MDIadmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
