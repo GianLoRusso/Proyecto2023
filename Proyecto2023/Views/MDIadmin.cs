@@ -110,5 +110,10 @@ namespace Proyecto2023
             frmVendedor formularioVendedor = new frmVendedor();
             formularioVendedor.Show();
         }
+
+        private void porProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
