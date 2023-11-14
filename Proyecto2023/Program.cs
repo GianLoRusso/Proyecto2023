@@ -17,7 +17,7 @@ namespace Proyecto2023
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVendedor());
+            Application.Run(new frmCliente());
         }
     }
 }

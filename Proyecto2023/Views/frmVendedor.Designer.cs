@@ -1,4 +1,7 @@
-﻿namespace Proyecto2023.Views
+﻿using System;
+using System.Windows.Forms;
+
+namespace Proyecto2023.Views
 {
     partial class frmVendedor
     {
@@ -173,6 +176,31 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void Seleccionar(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

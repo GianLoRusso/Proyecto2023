@@ -32,7 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,16 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Conexion.cs" />
+    <Compile Include="Contracts\IEntityAdapter.cs" />
+    <Compile Include="Contracts\IGenericRepository.cs" />
+    <Compile Include="Factory\FactoryDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VendedorDAL.cs" />
+    <Compile Include="Repositories\Sql\Adapters\ClienteAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\VendedorAdapter.cs" />
+    <Compile Include="Repositories\Sql\ClienteRepository.cs" />
+    <Compile Include="Repositories\Sql\VendedorRepository.cs" />
+    <Compile Include="Tools\SqlHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{ab476087-2bb6-4064-b99c-97aa38694c47}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{c3cf6e18-dfc7-4171-a01f-6496a101b60d}</Project>
       <Name>Domain</Name>

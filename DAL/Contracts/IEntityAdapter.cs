@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BLL
+namespace DAL.Contracts
 {
-    public class Class1
+    internal interface IEntityAdapter<T> where T : class, new()
     {
+        T Adapt(object[] values);
     }
 }
