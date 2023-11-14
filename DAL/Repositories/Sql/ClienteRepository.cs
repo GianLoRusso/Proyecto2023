@@ -95,7 +95,7 @@ namespace DAL.Repositories.Sql
                 new SqlParameter("@Nombre", obj.Nombre),
                 new SqlParameter("@Correo", obj.Correo),
                 new SqlParameter("@Direccion", obj.Direccion),
-                new SqlParameter("@Telefonor",obj.Telefono),
+                new SqlParameter("@Telefono",obj.Telefono),
                
               });
         }
