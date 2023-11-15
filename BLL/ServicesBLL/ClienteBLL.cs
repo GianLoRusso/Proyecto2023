@@ -35,7 +35,7 @@ namespace BLL.ServicesBLL
             dao.Insert(obj);
         }
 
-        public void Remove(Guid id)
+        public void Remove(int id)
         {
             dao.Delete(id);
         }
@@ -58,7 +58,7 @@ namespace BLL.ServicesBLL
             }
         }
 
-        public Cliente GetOne(Guid id)
+        public Cliente GetOne(int id)
         {
             try
             {

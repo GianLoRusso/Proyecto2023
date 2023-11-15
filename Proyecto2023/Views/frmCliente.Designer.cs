@@ -33,17 +33,17 @@ namespace Proyecto2023.Views
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.dgvVendedores = new System.Windows.Forms.DataGridView();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVendedores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
@@ -81,16 +81,17 @@ namespace Proyecto2023.Views
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrar.UseVisualStyleBackColor = true;
             // 
-            // btnCancelar
+            // btnListar
             // 
-            this.btnCancelar.Image = global::Proyecto2023.Properties.Resources._285688_file_empty_icon;
-            this.btnCancelar.Location = new System.Drawing.Point(196, 97);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(153, 70);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Listar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnListar.Image = global::Proyecto2023.Properties.Resources._285688_file_empty_icon;
+            this.btnListar.Location = new System.Drawing.Point(196, 97);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(153, 70);
+            this.btnListar.TabIndex = 8;
+            this.btnListar.Text = "Listar";
+            this.btnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // txtNombre
             // 
@@ -125,15 +126,15 @@ namespace Proyecto2023.Views
             this.txtCorreo.Size = new System.Drawing.Size(153, 20);
             this.txtCorreo.TabIndex = 14;
             // 
-            // dgvVendedores
+            // dgvClientes
             // 
-            this.dgvVendedores.AllowUserToAddRows = false;
-            this.dgvVendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVendedores.Location = new System.Drawing.Point(13, 256);
-            this.dgvVendedores.Name = "dgvVendedores";
-            this.dgvVendedores.Size = new System.Drawing.Size(775, 179);
-            this.dgvVendedores.TabIndex = 15;
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Location = new System.Drawing.Point(13, 256);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.Size = new System.Drawing.Size(775, 179);
+            this.dgvClientes.TabIndex = 15;
             // 
             // label2
             // 
@@ -176,18 +177,18 @@ namespace Proyecto2023.Views
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvVendedores);
+            this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Name = "frmCliente";
             this.Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVendedores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,12 +204,12 @@ namespace Proyecto2023.Views
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.DataGridView dgvVendedores;
+        private System.Windows.Forms.DataGridView dgvClientes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label label4;

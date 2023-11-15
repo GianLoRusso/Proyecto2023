@@ -36,7 +36,7 @@ namespace DAL.Repositories.Sql
             get => "SELECT ID_Cliente, Nombre, Correo, Direccion, Telefono FROM [dbo].[Cliente]";
         }
         #endregion
-        public void Delete(Guid id)
+        public void Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -59,7 +59,7 @@ namespace DAL.Repositories.Sql
             }
         }
 
-        public Cliente GetOne(Guid id)
+        public Cliente GetOne(int id)
         {
             try
             {

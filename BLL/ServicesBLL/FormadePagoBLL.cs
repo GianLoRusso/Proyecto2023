@@ -10,36 +10,36 @@ using System.Threading.Tasks;
 
 namespace BLL.ServicesBLL
 {
-    public sealed class VendedorBLL : IGenericBusinessRules<Vendedor>
+    public sealed class FormadePagoBLL : IGenericBusinessRules<FormadePago>
     {
         #region singleton
-        private readonly static VendedorBLL instance = new VendedorBLL();
-        private readonly static IGenericRepository<Vendedor> dao = FactoryDAL.VendedorRepository;
+        private readonly static FormadePagoBLL instance = new FormadePagoBLL();
+        private readonly static IGenericRepository<FormadePago> dao = FactoryDAL.FormadePagoRepository;
 
-        public static VendedorBLL Curremt
+        public static FormadePagoBLL Current
         {
-            get 
+            get
             {
                 return instance;
             }
         }
-        
-        private VendedorBLL()
+
+        private FormadePagoBLL()
         {
 
         }
         #endregion
-        public void Add(Vendedor obj)
+        public void Add(FormadePago obj)
         {
             dao.Insert(obj);
         }
 
-        public IEnumerable<Vendedor> GetAll(string filterExpression)
+        public IEnumerable<FormadePago> GetAll(string filterExpression)
         {
             return dao.GetAll(filterExpression);
         }
 
-        public Vendedor GetOne(int id)
+        public FormadePago GetOne(int id)
         {
             return dao.GetOne(id);
         }
@@ -49,7 +49,7 @@ namespace BLL.ServicesBLL
             dao.Delete(id);
         }
 
-        public void Update(Vendedor obj)
+        public void Update(FormadePago obj)
         {
             dao.Update(obj);
         }

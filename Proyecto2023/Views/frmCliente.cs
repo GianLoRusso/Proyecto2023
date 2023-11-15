@@ -30,6 +30,21 @@ namespace Proyecto2023.Views
             
 
             ClienteBLL.Current.Add(cliente);
+            MessageBox.Show("Cliente agregado a la cartera", "Ejecución exitosa", MessageBoxButtons.OK);
+
+            Clean();
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void Clean()
+        {
+            txtNombre.Text=string.Empty;
+            txtCorreo.Text=string.Empty;
+            txtDireccion.Text=string.Empty;
+            txtTelefono.Text=string.Empty;
         }
     }
 }

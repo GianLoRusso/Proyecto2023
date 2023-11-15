@@ -12,28 +12,32 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories.Sql
 {
-    internal class VendedorRepository : IGenericRepository<Vendedor>
+    internal class FormadePagoRepository : IGenericRepository<FormadePago>
     {
         #region Statements
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Vendedor] (Nombre, Contraseña) VALUE ( @Nombre , @Contraseña)";
+            get => "INSERT INTO [dbo].[Forma de Pago] (Descripcion, ID_Factura) VALUES ( @SDescripcion,@ID_Factura)";
         }
+
         private string UpdateStatement
         {
-            get => "UPDATE [dbo].[Vendedor] SET (Nombre = @Nombre , Contraseña = @Contraseña) WHERE ID_Vendedor = @ID_Vendedor";
+            get => "UPDATE [dbo].[Forma de Pago] SET (Descripcion = @Descripcion, Id_Factura = @ID_Factura) WHERE ID_FormaPago = @ID_FormaPago";
         }
+
         private string DeleteStatement
         {
-            get => "DELETE FROM [dbo].[Vendedor] WHERE ID_Vendedor = @ID_Vendedor";
+            get => "DELETE FROM [dbo].[Forma de Pago] WHERE ID_FormaPago = @ID_FormaPago";
         }
+
         private string SelectOneStatement
         {
-            get => "SELECT ID_Vendedor, Nombre, Contraseña FROM [dbo].[Vendedor] WHERE ID_Vendedor = @ID_Vendedor";
+            get => "SELECT ID_FormaPago, Descripcion, ID_Factura FROM [dbo].[Forma de Pago] WHERE  ID_FormaPago  = @ID_FormaPago";
         }
+
         private string SelectAllStatement
         {
-            get => "SELECT ID_Vendedor, Nombre, Contraseña FROM [dbo].[Vendedor]";
+            get => "SELECT ID_FormaPago, Descripcion, ID_Factura FROM [dbo].[Forma de Pago]";
         }
         #endregion
 
@@ -42,7 +46,7 @@ namespace DAL.Repositories.Sql
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Vendedor> GetAll(string filterExpression)
+        public IEnumerable<FormadePago> GetAll(string filterExpression = null)
         {
             string sqlStatement = filterExpression ?? SelectAllStatement;
 
@@ -55,49 +59,46 @@ namespace DAL.Repositories.Sql
                 while (dr.Read())
                 {
                     dr.GetValues(values);
-                    yield return VendedorAdapter.Current.Adapt(values);
+                    yield return FormadePagoAdapter.Current.Adapt(values);
                 }
             }
         }
 
-        public Vendedor  GetOne(int id)
+        public FormadePago GetOne(int id)
         {
             using (var dr = SqlHelper.ExecuteReader(SelectOneStatement, System.Data.CommandType.Text,
-                                       new SqlParameter[] { new SqlParameter("@ID_Vendedor", id) }))
+                                       new SqlParameter[] { new SqlParameter("@ID_FormaPago", id) }))
             {
                 Object[] values = new Object[dr.FieldCount];
 
-                Vendedor vendedor = default;
+                FormadePago formadepago = default;
 
                 while (dr.Read())
                 {
                     dr.GetValues(values);
-                    vendedor = VendedorAdapter.Current.Adapt(values);
+                    formadepago = FormadePagoAdapter.Current.Adapt(values);
                 }
 
-                return vendedor;
+                return formadepago;
             }
         }
 
-       
-
-        public void Insert(Vendedor obj)
+        public void Insert(FormadePago obj)
         {
             SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, new SqlParameter[]
             {
-                new SqlParameter("@Nombre", obj.Nombre),
-                new SqlParameter("@Contraseña",obj.Contraseña)
+                new SqlParameter ("@Descripcion", obj.Descripcion),
+                new SqlParameter ("@ID_Facutra",obj.ID_Factura)
             });
-                
-
-            
         }
 
-        public void Update(Vendedor obj)
+        public void Update(FormadePago obj)
         {
-            throw new NotImplementedException();
+            SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, new SqlParameter[]
+            {
+                new SqlParameter ("@Descripcion", obj.Descripcion),
+                new SqlParameter ("@ID_Facutra",obj.ID_Factura)
+            });
         }
-        
-
     }
 }

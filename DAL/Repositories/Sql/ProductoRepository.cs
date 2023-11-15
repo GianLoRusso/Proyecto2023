@@ -12,37 +12,36 @@ using System.Threading.Tasks;
 
 namespace DAL.Repositories.Sql
 {
-    internal class VendedorRepository : IGenericRepository<Vendedor>
+    internal class ProductoRepository : IGenericRepository<Producto>
     {
         #region Statements
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Vendedor] (Nombre, Contraseña) VALUE ( @Nombre , @Contraseña)";
+            get => "INSERT INTO [dbo].[Producto] (Nombre, Descripcion, Precio_Mayorista, Precio_Minorista, ID_TipodeProducto) VALUES (@Nombre, @Descripcion, @Precio_Mayorista, @Precio_Minorista, @ID_TipodeProducto)";
         }
         private string UpdateStatement
         {
-            get => "UPDATE [dbo].[Vendedor] SET (Nombre = @Nombre , Contraseña = @Contraseña) WHERE ID_Vendedor = @ID_Vendedor";
+            get => "UPDATE [dbo].[Producto] SET (Nombre = @Nombre, Descripcion = @Descripcion, Precio_Mayorista = @Precio_Mayorista, Precio_Minorista = @Precio_Minorista, ID_TipodeProdcuto = @ID_TipodeProducto) WHERE ID_Producto = @ID_Producto";
         }
         private string DeleteStatement
         {
-            get => "DELETE FROM [dbo].[Vendedor] WHERE ID_Vendedor = @ID_Vendedor";
+            get => "DELETE FROM [dbo].[Producto] WHERE ID_Producto = @ID_Producto";
         }
         private string SelectOneStatement
         {
-            get => "SELECT ID_Vendedor, Nombre, Contraseña FROM [dbo].[Vendedor] WHERE ID_Vendedor = @ID_Vendedor";
+            get => "SELECT ID_Producto, Nombre, Descripcion, Precio_Mayorista, Precio_Minorista, ID_TipodeProducto FROM [dbo].[Producto] WHERE ID_Producto = @ID_Producto";
         }
         private string SelectAllStatement
         {
-            get => "SELECT ID_Vendedor, Nombre, Contraseña FROM [dbo].[Vendedor]";
+            get => "SELECT ID_Producto, Nombre, Descripcion, Precio_Mayorista, Precio_Minorista, ID_Tipodeproducto FROM [dbo].[Producto]";
         }
         #endregion
-
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Vendedor> GetAll(string filterExpression)
+        public IEnumerable<Producto> GetAll(string filterExpression)
         {
             string sqlStatement = filterExpression ?? SelectAllStatement;
 
@@ -55,49 +54,45 @@ namespace DAL.Repositories.Sql
                 while (dr.Read())
                 {
                     dr.GetValues(values);
-                    yield return VendedorAdapter.Current.Adapt(values);
+                    yield return ProductoAdapter.Current.Adapt(values);
                 }
             }
         }
 
-        public Vendedor  GetOne(int id)
+        public Producto GetOne(int id)
         {
             using (var dr = SqlHelper.ExecuteReader(SelectOneStatement, System.Data.CommandType.Text,
-                                       new SqlParameter[] { new SqlParameter("@ID_Vendedor", id) }))
+                                       new SqlParameter[] { new SqlParameter("@ID_Producto", id) }))
             {
                 Object[] values = new Object[dr.FieldCount];
 
-                Vendedor vendedor = default;
+                Producto producto = default;
 
                 while (dr.Read())
                 {
                     dr.GetValues(values);
-                    vendedor = VendedorAdapter.Current.Adapt(values);
+                    producto = ProductoAdapter.Current.Adapt(values);
                 }
 
-                return vendedor;
+                return producto;
             }
         }
 
-       
-
-        public void Insert(Vendedor obj)
+        public void Insert(Producto obj)
         {
             SqlHelper.ExecuteNonQuery(InsertStatement, System.Data.CommandType.Text, new SqlParameter[]
             {
-                new SqlParameter("@Nombre", obj.Nombre),
-                new SqlParameter("@Contraseña",obj.Contraseña)
+                new SqlParameter ("@Nombre", obj.Nombre),
+                new SqlParameter ("@Descripcion", obj.Descripcion),
+                new SqlParameter ("@Precio_Mayorista",obj.Precio_Mayorista),
+                new SqlParameter ("@Precio_Minorista",obj.Precio_Minorista),
+                new SqlParameter ("@ID_TipodeProducto", obj.ID_TipodeProducto)
             });
-                
-
-            
         }
 
-        public void Update(Vendedor obj)
+        public void Update(Producto obj)
         {
             throw new NotImplementedException();
         }
-        
-
     }
 }

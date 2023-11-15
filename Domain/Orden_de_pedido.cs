@@ -11,9 +11,9 @@ namespace Domain
         public string Cantidad { get; set; }
         public DateTime Fecha_Creacion { get; set; }
         public DateTime Fecha_Entrega { get; set; }
-        public int ID_Cliente { get; set; }
-        public int ID_Producto { get; set; }
-        public int ID_Vendedor { get; set; }
+        public Cliente ID_Cliente { get; set; }
+        public Producto ID_Producto { get; set; }
+        public Vendedor ID_Vendedor { get; set; }
         public int Nro_Orden { get; set; }
 
     }

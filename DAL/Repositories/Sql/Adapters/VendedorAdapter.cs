@@ -29,7 +29,7 @@ namespace DAL.Repositories.Sql.Adapters
         {
             return new Vendedor()
             {
-                ID_Vendedor = Guid.Parse(values[0].ToString()),
+                ID_Vendedor = int.Parse(values[0].ToString()),
                 Nombre = values[1].ToString(),
                 Contraseña = values[2].ToString(),
             };

@@ -47,9 +47,23 @@
     <Compile Include="Contracts\IGenericRepository.cs" />
     <Compile Include="Factory\FactoryDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Sql\Adapters\CarteradeClientesAdapter.cs" />
     <Compile Include="Repositories\Sql\Adapters\ClienteAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\DetallePedidoAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\FacturaAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\FormadePagoAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\Orden_de_pedidoAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\PedidoAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\ProductoAdapter.cs" />
     <Compile Include="Repositories\Sql\Adapters\VendedorAdapter.cs" />
+    <Compile Include="Repositories\Sql\CarteradeClientesRepository.cs" />
     <Compile Include="Repositories\Sql\ClienteRepository.cs" />
+    <Compile Include="Repositories\Sql\DetallePedidoRepository.cs" />
+    <Compile Include="Repositories\Sql\FacturaRepository.cs" />
+    <Compile Include="Repositories\Sql\FormadePagoRepository.cs" />
+    <Compile Include="Repositories\Sql\Orden_de_pedidoRepository.cs" />
+    <Compile Include="Repositories\Sql\PedidoRepository.cs" />
+    <Compile Include="Repositories\Sql\ProductoRepository.cs" />
     <Compile Include="Repositories\Sql\VendedorRepository.cs" />
     <Compile Include="Tools\SqlHelper.cs" />
   </ItemGroup>

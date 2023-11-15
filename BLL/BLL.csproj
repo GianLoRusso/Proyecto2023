@@ -44,6 +44,12 @@
     <Compile Include="Contracts\IGenericBusinessRules.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicesBLL\ClienteBLL.cs" />
+    <Compile Include="ServicesBLL\DetallePedidoBLL.cs" />
+    <Compile Include="ServicesBLL\FacturaBLL.cs" />
+    <Compile Include="ServicesBLL\FormadePagoBLL.cs" />
+    <Compile Include="ServicesBLL\Orden_de_pedidoBLL.cs" />
+    <Compile Include="ServicesBLL\PedidoBLL.cs" />
+    <Compile Include="ServicesBLL\ProductoBLL.cs" />
     <Compile Include="ServicesBLL\VendedorBLL.cs" />
   </ItemGroup>
   <ItemGroup>

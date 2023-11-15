@@ -10,12 +10,12 @@ namespace BLL.Contracts
     {
         void Add(T obj);
 
-        void Remove(Guid id);
+        void Remove(int id);
 
         void Update(T obj);
 
         IEnumerable<T> GetAll(string filterExpression);
 
-        T GetOne(Guid id);
+        T GetOne(int id);
     }
 }
