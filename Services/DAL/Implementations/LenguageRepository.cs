@@ -30,28 +30,28 @@ namespace Services.DAL.Implementations
 
         private string basepath = ConfigurationManager.AppSettings["LenguagePath"];
 
-        public string Find(string word)
-        {
-            using (var sr = new StreamReader(basepath + "." + Thread.CurrentThread.CurrentCulture.Name))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string[] line = sr.ReadLine().Split('=');
+        //public string Find(string word)
+        //{
+        //    using (var sr = new StreamReader(basepath + "." + Thread.CurrentThread.CurrentCulture.Name))
+        //    {
+        //        while (!sr.EndOfStream)
+        //        {
+        //            string[] line = sr.ReadLine().Split('=');
 
-                    if (line[0] == word)
+        //            if (line[0] == word)
                     
-                    {
-                        if (String.IsNullOrEmpty(line[1]))
+        //            {
+        //                if (String.IsNullOrEmpty(line[1]))
                             
-                            return line[0];
+        //                    return line[0];
 
-                        return line[1];
-                    }
-                }
-            }
+        //                return line[1];
+        //            }
+        //        }
+        //    }
 
-            //throw new WordNotFoundException();
-        }
+        //    //throw new WordNotFoundException();
+        //}
         public void WriteNewWord (string word, string value)
         {
 
