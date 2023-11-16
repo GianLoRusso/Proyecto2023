@@ -1,9 +1,13 @@
-﻿using System;
+﻿using BLL.ServicesBLL;
+using Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Proyecto2023.Views
 {
-    partial class frmVendedor
+    partial class frmVendedor : Form
     {
         /// <summary>
         /// Required designer variable.
@@ -38,7 +42,7 @@ namespace Proyecto2023.Views
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.dgvVendedores = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -115,17 +119,17 @@ namespace Proyecto2023.Views
             this.btnBorrar.UseVisualStyleBackColor = true;
             this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
-            // btnCancelar
+            // btnListar
             // 
-            this.btnCancelar.Image = global::Proyecto2023.Properties.Resources._285688_file_empty_icon;
-            this.btnCancelar.Location = new System.Drawing.Point(187, 92);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(153, 70);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnListar.Image = global::Proyecto2023.Properties.Resources._285688_file_empty_icon;
+            this.btnListar.Location = new System.Drawing.Point(187, 92);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(153, 70);
+            this.btnListar.TabIndex = 7;
+            this.btnListar.Text = "Listar";
+            this.btnListar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // dgvVendedores
             // 
@@ -136,6 +140,7 @@ namespace Proyecto2023.Views
             this.dgvVendedores.Name = "dgvVendedores";
             this.dgvVendedores.Size = new System.Drawing.Size(775, 179);
             this.dgvVendedores.TabIndex = 8;
+            this.dgvVendedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVendedores_CellContentClick);
             this.dgvVendedores.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Seleccionar);
             // 
             // label3
@@ -162,7 +167,7 @@ namespace Proyecto2023.Views
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvVendedores);
-            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -172,6 +177,7 @@ namespace Proyecto2023.Views
             this.Controls.Add(this.label1);
             this.Name = "frmVendedor";
             this.Text = "Alta de Vendedor";
+            this.Load += new System.EventHandler(this.frmVendedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVendedores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,12 +191,20 @@ namespace Proyecto2023.Views
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            string j = "";
+            IEnumerable<Vendedor> vendedores = VendedorBLL.Current.GetAll(String.IsNullOrEmpty(j) ? null : j);
+            dgvVendedores.DataSource = vendedores.ToList();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            int vendedorid = (int)dgvVendedores.SelectedRows[0].Cells["ID_Vendedor"].Value;
+            VendedorBLL.Current.Remove(vendedorid);
+
+            string j = "";
+            IEnumerable<Vendedor> vendedores = VendedorBLL.Current.GetAll(String.IsNullOrEmpty(j) ? null : j);
+            dgvVendedores.DataSource = vendedores.ToList();
+            MessageBox.Show("Vendedor eliminado", "Ejecución exitosa", MessageBoxButtons.OK);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -200,7 +214,15 @@ namespace Proyecto2023.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Vendedor vendedor = new Vendedor();
+            vendedor.Nombre = txtNombre.Text;
+            vendedor.Contraseña =txtContraseña.Text;
+
+            VendedorBLL.Current.Add(vendedor);
+            MessageBox.Show("Vendedor agregado correctamente", "Ejecución exitosa", MessageBoxButtons.OK);
+            string j = "";
+            IEnumerable<Vendedor> vendedores = VendedorBLL.Current.GetAll(String.IsNullOrEmpty(j) ? null : j);
+            dgvVendedores.DataSource = vendedores.ToList();
         }
 
         #endregion
@@ -212,7 +234,7 @@ namespace Proyecto2023.Views
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnBorrar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView dgvVendedores;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;

@@ -48,7 +48,6 @@ namespace Proyecto2023.Views
             // 
             // btnModificar
             // 
-            this.btnModificar.Enabled = false;
             this.btnModificar.Image = global::Proyecto2023.Properties.Resources._285638_pencil_icon;
             this.btnModificar.Location = new System.Drawing.Point(28, 101);
             this.btnModificar.Name = "btnModificar";
@@ -57,6 +56,7 @@ namespace Proyecto2023.Views
             this.btnModificar.Text = "Modificar";
             this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -80,6 +80,7 @@ namespace Proyecto2023.Views
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
             // 
             // btnListar
             // 
@@ -131,7 +132,7 @@ namespace Proyecto2023.Views
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Location = new System.Drawing.Point(13, 256);
+            this.dgvClientes.Location = new System.Drawing.Point(28, 256);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.Size = new System.Drawing.Size(775, 179);
             this.dgvClientes.TabIndex = 15;

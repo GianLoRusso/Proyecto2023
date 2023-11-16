@@ -50,6 +50,7 @@
     <Compile Include="ServicesBLL\Orden_de_pedidoBLL.cs" />
     <Compile Include="ServicesBLL\PedidoBLL.cs" />
     <Compile Include="ServicesBLL\ProductoBLL.cs" />
+    <Compile Include="ServicesBLL\TipoProductoBLL.cs" />
     <Compile Include="ServicesBLL\VendedorBLL.cs" />
   </ItemGroup>
   <ItemGroup>

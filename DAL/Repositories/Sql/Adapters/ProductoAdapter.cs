@@ -37,6 +37,8 @@ namespace DAL.Repositories.Sql.Adapters
                 Descripcion = values[2].ToString(),
                 Precio_Mayorista = int.Parse(values[3].ToString()),
                 Precio_Minorista = int.Parse(values[4].ToString()),
+
+                //adaptarr con TipodeProducto
                 ID_TipodeProducto = int.Parse(values[5].ToString()),
 
                 

@@ -10,36 +10,37 @@ using System.Threading.Tasks;
 
 namespace BLL.ServicesBLL
 {
-    public sealed class VendedorBLL : IGenericBusinessRules<Vendedor>
+    public sealed class TipoProductoBLL : IGenericBusinessRules<TipoProducto>
     {
         #region singleton
-        private readonly static VendedorBLL instance = new VendedorBLL();
-        private readonly static IGenericRepository<Vendedor> dao = FactoryDAL.VendedorRepository;
+        private readonly static TipoProductoBLL _instance = new TipoProductoBLL();
+        private readonly static IGenericRepository<TipoProducto> dao = FactoryDAL.TipoProductoRepository;
 
-        public static VendedorBLL Current
-        {
+        public static TipoProductoBLL Instance 
+        { 
             get 
-            {
-                return instance;
-            }
+            {  
+                return _instance; 
+            } 
         }
-        
-        private VendedorBLL()
+
+        private TipoProductoBLL()
         {
 
         }
         #endregion
-        public void Add(Vendedor obj)
+
+        public void Add(TipoProducto obj)
         {
             dao.Insert(obj);
         }
 
-        public IEnumerable<Vendedor> GetAll(string filterExpression)
+        public IEnumerable<TipoProducto> GetAll(string filterExpression)
         {
             return dao.GetAll(filterExpression);
         }
 
-        public Vendedor GetOne(int id)
+        public TipoProducto GetOne(int id)
         {
             return dao.GetOne(id);
         }
@@ -49,7 +50,7 @@ namespace BLL.ServicesBLL
             dao.Delete(id);
         }
 
-        public void Update(Vendedor obj)
+        public void Update(TipoProducto obj)
         {
             dao.Update(obj);
         }

@@ -55,6 +55,7 @@
     <Compile Include="Repositories\Sql\Adapters\Orden_de_pedidoAdapter.cs" />
     <Compile Include="Repositories\Sql\Adapters\PedidoAdapter.cs" />
     <Compile Include="Repositories\Sql\Adapters\ProductoAdapter.cs" />
+    <Compile Include="Repositories\Sql\Adapters\TipoProductoAdapter.cs" />
     <Compile Include="Repositories\Sql\Adapters\VendedorAdapter.cs" />
     <Compile Include="Repositories\Sql\CarteradeClientesRepository.cs" />
     <Compile Include="Repositories\Sql\ClienteRepository.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Repositories\Sql\Orden_de_pedidoRepository.cs" />
     <Compile Include="Repositories\Sql\PedidoRepository.cs" />
     <Compile Include="Repositories\Sql\ProductoRepository.cs" />
+    <Compile Include="Repositories\Sql\TipoProductoRepository.cs" />
     <Compile Include="Repositories\Sql\VendedorRepository.cs" />
     <Compile Include="Tools\SqlHelper.cs" />
   </ItemGroup>

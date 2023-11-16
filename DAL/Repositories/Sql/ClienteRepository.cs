@@ -38,7 +38,10 @@ namespace DAL.Repositories.Sql
         #endregion
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            SqlHelper.ExecuteNonQuery(DeleteStatement, System.Data.CommandType.Text, new SqlParameter[]
+            {
+                new SqlParameter ("@ID_Cliente",id)
+            });
         }
 
         public IEnumerable<Cliente> GetAll(string filterExpression)
@@ -102,7 +105,13 @@ namespace DAL.Repositories.Sql
 
         public void Update(Cliente obj)
         {
-            throw new NotImplementedException();
+            SqlHelper.ExecuteNonQuery(UpdateStatement, System.Data.CommandType.Text, new SqlParameter[]
+            {
+                new SqlParameter("@Nombre",obj.Nombre),
+                new SqlParameter("@Correo", obj.Correo),
+                new SqlParameter("@Direccion", obj.Direccion),
+                new SqlParameter("@Telefono",obj.Telefono),
+            });
         }
     }
 }

@@ -22,6 +22,8 @@ namespace DAL.Factory
         public static IGenericRepository<Orden_de_pedido> Orden_de_pedidoRepository { get; private set; }
         public static IGenericRepository<Factura> FacturaRepository { get; private set; }
         public static IGenericRepository<FormadePago> FormadePagoRepository { get; private set; }
+        public static IGenericRepository<TipoProducto> TipoProductoRepository { get; private set; }
+
 
         static FactoryDAL()
         {
@@ -43,6 +45,8 @@ namespace DAL.Factory
                                 (Type.GetType(repository + ".FacturaRepository"));
             FormadePagoRepository = (IGenericRepository<FormadePago>)Activator.CreateInstance
                                 (Type.GetType(repository + ".FormadePagoRepository"));
+            TipoProductoRepository = (IGenericRepository<TipoProducto>)Activator.CreateInstance
+                                (Type.GetType(repository + ".TipoProductoRepository"));
         }
     }
 }
