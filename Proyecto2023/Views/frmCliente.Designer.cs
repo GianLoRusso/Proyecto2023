@@ -189,6 +189,7 @@ namespace Proyecto2023.Views
             this.Controls.Add(this.btnAgregar);
             this.Name = "frmCliente";
             this.Text = "Clientes";
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

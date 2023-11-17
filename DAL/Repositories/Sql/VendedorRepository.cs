@@ -17,7 +17,7 @@ namespace DAL.Repositories.Sql
         #region Statements
         private string InsertStatement
         {
-            get => "INSERT INTO [dbo].[Vendedor] (Nombre, Contraseña) VALUE ( @Nombre , @Contraseña)";
+            get => "INSERT INTO [dbo].[Vendedor] (Nombre, Contraseña) VALUE (@Nombre, @Contraseña)";
         }
         private string UpdateStatement
         {

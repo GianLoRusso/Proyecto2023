@@ -79,5 +79,10 @@ namespace Proyecto2023.Views
             //IEnumerable<Cliente> clientes = ClienteBLL.Current.GetAll(String.IsNullOrEmpty(j) ? null : j);
             //dgvClientes.DataSource = clientes.ToList();
         }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

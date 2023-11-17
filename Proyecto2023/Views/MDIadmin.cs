@@ -22,10 +22,12 @@ namespace Proyecto2023
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
+            //Form childForm = new Form();
+            //childForm.MdiParent = this;
+            //childForm.Text = "Ventana " + childFormNumber++;
+            //childForm.Show();
+            frmCliente formularioCliente = new frmCliente();
+            formularioCliente.Show();
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -114,6 +116,17 @@ namespace Proyecto2023
         private void porProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void editMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductos formularioProductos = new frmProductos();
+            formularioProductos.Show();
         }
     }
 }
