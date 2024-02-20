@@ -125,6 +125,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Views\l18n\idioma.es-AR" />
+    <None Include="Views\l18n\idioma.en-GB" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -10,6 +10,8 @@ namespace Services.DAL.Factory
     internal class ServiceFactory
     {
         public static LoggerRepository LoggerRepository { get; set; }
+
+        public static LanguageRepository LanguageRepository { get; set; }
         
     }
 }
